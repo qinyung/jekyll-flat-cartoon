@@ -1,19 +1,19 @@
-title: Your awesome title
+title: 演示博客
 author:
-  name: GitHub User
+  name: 倾语
   email: your-email@domain.com
 
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
-description: >
+description: >-
   这里是描述
 
 # Build settings
 
-# theme: minima
+theme: minima
 
 plugins:
-  # - jekyll-feed
+  - jekyll-feed
   - jekyll-seo-tag
 
 # Theme-specific settings
