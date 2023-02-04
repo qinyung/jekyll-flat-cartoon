@@ -1,0 +1,548 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+:root{
+    --color:#3880ff;
+    --back:#f6f8fc;
+    --gray:#d6d6d6;
+    --gray2:#bababa;
+    --text:#262627;
+    --text2:#f6f8fc;
+    --switch:#fff;
+}
+
+
+.red{
+    --color:#e01e37;
+}
+
+.purple{
+    --color:#822faf;
+}
+
+.green{
+    --color:#38b000;
+}
+
+.yellow{
+    --color:#ffc300;
+}
+
+.pink{
+    --color:#ffafcc;
+}
+
+.orange{
+    --color:#f77f00;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background:transparent;
+    display:none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    transition:.2s;
+    border-radius: 10px;
+    z-index:5;
+    opacity: 0.6;
+}
+
+
+body{
+    background-color: var(--back);
+    padding:20px;
+    margin: 0px;
+    height:100%;
+    width:100%;
+    box-sizing:border-box;
+    overflow:overlay;
+    color:var(--text)
+}
+
+*{
+    font-family: 'Open Sans', sans-serif;
+    transition: .3s filter, .3s scale,.3s border-color,.3s background-color, .3s background-image,transform .3s, box-shadow .3s;
+}
+
+code{
+    font-family: 'Ubuntu Mono', monospace;
+    background: var(--gray);
+    border-radius:4px;
+    padding: 3px;
+    color:#ab5457;
+}
+
+:disabled{
+    cursor:not-allowed !important;
+    filter:saturate(0) brightness(90%) !important;
+    border-color:var(--gray2) !important;
+    box-shadow: none !important;
+}
+
+button, input[type="button"], input[type="submit"],input[type="reset"]{
+    padding:12px;
+    background: var(--color);
+    border:2px solid black;
+    color:var(--text2);
+    margin:4px;
+    border-radius:4px;
+    box-shadow:2px 2px 0px black;
+    cursor:pointer;
+    font-weight:800;
+}
+
+button:hover:not(:disabled), input[type="button"]:hover:not(:disabled), input[type="submit"]:hover:not(:disabled),input[type="reset"]:hover:not(:disabled){
+    filter: brightness(90%);
+    box-shadow:none;
+    transform:translate(2px,2px);
+}
+
+button:active, input[type="button"]:active, input[type="submit"]:active,input[type="reset"]:active{
+    scale:0.98;
+    filter: brightness(80%);
+}
+
+input[type="radio"]{
+    appearance: none;
+    width:30px;
+    height:30px;
+    border:2px solid black;
+    border-radius:50%;
+    cursor: pointer;
+    background-color: var(--back);
+    box-shadow:2px 2px 0px black;
+}
+
+input[type="radio"]:hover:not(:disabled){
+    filter: brightness(90%);
+}
+
+input[type="radio"]:checked{
+    transform:translate(2px,2px);
+    background-color: var(--color);
+    box-shadow:none;
+    background-image: url("https://moderncss.goodvessel92551.repl.co/tick.svg");
+}
+
+textarea{
+    border:2px solid black;
+    border-radius:3px;
+    margin:4px;
+    background:none;
+    padding:5px;
+    box-sizing:border-box;
+    resize:none;
+    color:var(--text);
+    box-shadow:2px 2px 0px black;
+}
+
+input[type="text"], input[type="search"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"],input[type="url"]{
+    border:2px solid black;
+    color:var(--text);
+    height:25px;
+    border-radius:4px;
+    background: none;
+    margin: 4px;
+    box-shadow:2px 2px 0px black;
+    padding:5px;
+}
+input[type="text"]:focus, input[type="search"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="tel"]:active,input[type="url"]:focus,textarea:focus{
+    box-shadow:none;
+    transform:translate(2px, 2px);
+}
+
+input[type="text"]:hover:not(:disabled), input[type="search"]:hover:not(:disabled), input[type="email"]:hover:not(:disabled), input[type="number"]:hover:not(:disabled),input[type="url"]:hover:not(:disabled), input[type="password"]:hover:not(:disabled), input[type="tel"]:hover:not(:disabled),textarea:hover:not(:disabled){
+    filter: brightness(90%);
+}
+
+input[type="text"]:focus, input[type="search"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus,input[type="url"]:focus, input[type="tel"]:focus,textarea:focus{
+   filter: brightness(80%); 
+    outline: none;
+}
+
+::placeholder{
+    color:var(--gray);
+}
+
+input[type="hidden"]{
+    display: none;
+}
+
+input[type="checkbox"]:not(.switch){
+    appearance: none;
+    width:30px;
+    height:30px;
+    border-radius:4px;
+    border:2px solid black;
+    background:var(--back);
+    cursor: pointer;
+    box-shadow:2px 2px 0px black;
+}
+
+input[type="checkbox"]:not(.switch):checked{
+    background-color: var(--color);
+    box-shadow:none;
+    transform: translate(2px,2px);
+    background-image: url("https://moderncss.goodvessel92551.repl.co/tick.svg");
+}
+
+
+.switch{
+    appearance: none;
+    width:50px;
+    background-color: var(--gray);
+    border: 2px solid black;
+    box-shadow:2px 2px 0px black;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.switch::after{
+    content: "";
+    width: 22px;
+    height:22px;
+    background: var(--switch);
+    display: block;
+    border-radius: 50%;
+    transform: translate(3px,2px);
+    transition: .3s transform,.3s box-shadow;
+    border: 2px solid black;
+    box-sizing: border-box;
+    box-shadow:1px 1px 0px black;
+}
+
+.switch:checked::after{
+    transform: translate(21px,2px);
+    box-shadow: none;
+}
+
+.switch:checked{
+    background-color: var(--color);
+    transform: translate(2px,2px);
+    box-shadow: none;
+}
+
+input[type="range"]{
+    appearance: none;
+    background: var(--gray);
+    height:2px;
+    border-radius:2px;
+    width:200px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    appearance: none;
+    height:25px;
+    width: 25px;
+    background-color: var(--color);
+    border: 2px solid black;
+    box-shadow:2px 2px 0px black;
+    border-radius: 50%;
+    transition: .3s box-shadow,.3s transform;
+}
+
+input[type="range"]::-webkit-slider-thumb:active{
+    box-shadow: none;
+    transform: translate(2px,2px);
+}
+
+input[type="range"]::-moz-range-thumb{
+    appearance: none;
+    height:25px;
+    width: 25px;
+    background-color: var(--color);
+    border: 2px solid black;
+    box-shadow:2px 2px 0px black;
+    border-radius: 50%;
+    transition: .3s box-shadow,.3s transform;
+}
+
+input[type="range"]::-moz-range-thumb:active{
+    box-shadow: none;
+    transform: translate(2px,2px);
+}
+
+:link{
+    color:var(--text);
+    text-decoration: none;
+    border-bottom:2px solid black;
+}
+
+:link:hover:not(:disabled){
+    filter: brightness(90%);
+    border-color:var(--color);
+}
+
+
+
+:visited{
+    color:var(--text);
+    text-decoration: none;
+    border-bottom:1px solid var(--gray);
+}
+
+:visited:hover:not(:disabled){
+    filter: brightness(90%);
+    border-color:#a64dff;
+}
+
+select{
+    appearance: none;
+    padding:8px 32px 8px 8px;
+    background: #fff;
+    box-shadow:1px 1px 0px black;
+    border:2px solid black;
+    border-radius: 4px;
+    color:var(--text);
+    background-image: url("https://Moderncss.goodvessel92551.repl.co/down.svg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 20px 20px;
+    cursor: pointer;
+}
+
+select:hover:not(:disabled){
+    filter:brightness(90%);
+}
+
+select:focus{
+    border-radius:4px 4px 0px 0px;
+    box-shadow:none;
+    transform: translate(2px,2px);
+    outline:none;
+    filter: brightness(80%);
+}
+
+
+h1{
+    font-size:50px;
+    color:var(--text);
+    font-weight:bolder;
+}
+
+h2{
+    font-size:40px;
+    color:var(--text);
+    font-weight:bold;
+    filter: saturate(0.9);
+}
+
+h3{
+    font-size:30px;
+    color:var(--text);
+    font-weight:bold;
+    filter: saturate(0.8);
+}
+
+h4{
+    font-size:20px;
+    color:var(--text);
+    font-weight:bold;
+    filter: saturate(0.7);
+}
+
+h5{
+    font-size:15px;
+    color:var(--text);
+    font-weight:bold;
+    filter: saturate(0.6);
+}
+
+h6{
+    font-size:10px;
+    color:var(--text);
+    font-weight:bold;
+    filter: saturate(0.5);
+}
+
+input[type="date"],input[type="time"],input[type="week"],input[type="datetime"],input[type="datetime-local"]{
+    border:2px solid black;
+    color:var(--text);
+    height:25px;
+    border-radius:4px;
+    background: none;
+    margin: 4px;
+    box-shadow:2px 2px 0px black;
+    padding:5px;
+}
+
+input[type="date"]:hover:not(:disabled),input[type="time"]:hover:not(:disabled),input[type="week"]:hover:not(:disabled),input[type="datetime"]:hover:not(:disabled),input[type="datetime-local"]:hover:not(:disabled){
+    filter: brightness(90%);
+}
+
+input[type="date"]:focus,input[type="time"]:focus,input[type="week"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus{
+    box-shadow:none;
+    transform:translate(2px, 2px);
+}
+
+input[type="file"]{
+    padding:3px;
+    border:2px solid black;
+    border-radius: 4px;
+    margin: 4px;
+    box-shadow:1px 1px 0px black;
+}
+
+input[type="file"]::file-selector-button{
+    transition: .4s;
+    padding:8px;
+    background: var(--color);
+    border:2px solid black;
+    color:var(--text2);
+    font-weight:bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin:4px;
+    margin-right: 10px;
+    box-shadow:2px 2px 0px black;
+}
+
+input[type="file"]::file-selector-button:hover:not(:disabled){
+    filter: brightness(90%);
+    box-shadow: none;
+    transform: translate(2px,2px);
+}
+
+input[type="file"]::file-selector-button:active{
+    filter: brightness(80%);
+    scale: 0.99;
+}
+
+input[type="color"]{
+    appearance: none;
+    border:none;
+    padding:0px;
+    cursor:pointer;
+    background-color:transparent;
+    width:30px;
+    height:34px;
+    margin:4px;
+}
+
+input[type="color"]::-moz-color-swatch{
+    border-radius: 4px;
+    border:2px solid black;
+    padding:0px;
+    box-shadow:2px 2px 0px black;
+}
+
+input[type="color"]::-webkit-color-swatch{
+    border-radius: 4px;
+    border:2px solid black;
+    padding:0px;
+    box-shadow:2px 2px 0px black;
+}
+
+.made_with{
+    position: fixed;
+    right:8px;
+    bottom: 8px;
+    opacity: 0.8;
+    z-index: 99999;
+}
+
+.made_with:hover:not(:disabled){
+    opacity: 1;
+}
+
+img,input[type="input"]{
+    width:300px;
+    height:300px;
+    object-fit:cover;
+    border-radius:4px;
+    border:2px solid black;
+    margin:4px;
+    box-shadow: 2px 2px black;
+    cursor: pointer;
+}
+
+img:hover:not(:disabled),input[type="input"]:hover:not(:disabled){
+    filter:brightness(95%);
+    box-shadow: none;
+    transform: translate(2px,2px);
+}
+
+.card{
+    width:200px;
+    height:300px;
+    background-color: var(--back);
+    border:2px solid black;
+    float: left;
+    margin: 4px;
+    border-radius:4px;
+    cursor: pointer;
+    box-shadow: 2px 2px black;
+}
+
+.card:hover:not(:disabled){
+    filter:brightness(95%);
+    box-shadow: none;
+    transform: translate(2px,2px);
+}
+
+b,strong{
+    color:var(--color)
+}
+
+u{
+    text-decoration:none;
+    border-bottom:1px solid var(--color);
+}
+
+s{
+    text-decoration: var(--color) line-through;
+}
+
+nav{
+    position: fixed;
+    height:40px;
+    background-color: var(--back);
+    border-bottom:2px solid black;
+    padding:0px 8px 0px 8px;
+    left:0;
+    top:0;
+    width:100%;
+    z-index:10;
+    box-sizing:border-box;
+}
+
+nav a{
+    float: left;
+    display: flex;
+    align-items: center;
+    margin:0px 8px 0px 8px;
+    cursor:pointer;
+    color:var(--text);
+    top: 50%;
+    position: relative;
+    transform: translate(0, -50%);
+    border-bottom:none !important;
+}
+
+nav a:hover:not(:disabled){
+    filter:brightness(120%);
+}
+
+.nav_right{
+    float: right !important;
+}
+
+footer{
+    position: relative;
+    height:40px;
+    background-color: var(--back);
+    border-top:2px solid black;
+    bottom:-20px;
+    left:-20px;
+    width:calc(100% + 40px);
+    z-index:10;
+    text-align:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
